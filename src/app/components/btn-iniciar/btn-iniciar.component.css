@@ -1,0 +1,20 @@
+.btn-primary {
+    background-color: #12d5f4; /* Um azul mais suave */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #097bf4; /* Um azul mais escuro quando o mouse passa sobre */
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: #dc3545; /* Um vermelho mais moderno */
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #b02a37; /* Um vermelho mais escuro quando o mouse passa sobre */
+    color: white;
+  }
+  

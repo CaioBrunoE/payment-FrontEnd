@@ -9,7 +9,8 @@ import { RouterLink } from '@angular/router';
   imports: [
   NgOptimizedImage,
   BtnIniciarComponent,
-  RouterLink],
+  RouterLink,
+BtnIniciarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

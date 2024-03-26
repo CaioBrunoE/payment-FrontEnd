@@ -1,15 +1,16 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-type BtnVariants = "primary" | "secondary";
+type BtnVariants = "btn-primary" | "btn-secondary";
 
 @Component({
   selector: 'app-btn-iniciar',
   standalone: true,
   imports: [
     RouterLink,
-    NgIf],
+    NgIf,
+  NgClass],
   templateUrl: './btn-iniciar.component.html',
   styleUrl: './btn-iniciar.component.css'
 })
@@ -17,7 +18,7 @@ export class BtnIniciarComponent {
   @Input("btn-text") btnText: string = "";
   @Input() disabled: boolean=false;
   @Input() loading: boolean=false;
-  @Input() variant: BtnVariants="primary"
+  @Input() variant: BtnVariants="btn-secondary"
   @Output("submit") onSubmit = new EventEmitter();
   
   submit(){

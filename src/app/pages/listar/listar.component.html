@@ -1,6 +1,35 @@
-<div class="container-fluid list-container">
-    <section>
-    
-
-    </section>
+<div>
+<div class="container">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID do Produto</th>
+          <th scope="col">ID do Usuário</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Método de Pagamento</th>
+          <th scope="col">Criado</th>
+          <th scope="col">Atualizado</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>
+            {{payment.idProduct}} 
+         </td>
+          <td>{{payment.idUser}}</td>
+          <td>{{payment.value}}</td>
+          <td>{{payment.paymentMethod}}</td>
+          <td>{{payment.created}}</td>
+          <td>{{payment.updated}}</td>
+          <td>{{payment.status}}</td>
+          <td>
+            <app-btn-iniciar btn-text="editar" [loading]="false" [variant]="'btn-primary'"></app-btn-iniciar>
+            <app-btn-iniciar [btn-text]="'deletar'"  [disabled]="false" [loading]="false"  [variant]="'btn-secondary'" ></app-btn-iniciar>
+         </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
