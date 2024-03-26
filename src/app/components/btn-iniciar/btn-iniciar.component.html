@@ -1,0 +1,8 @@
+<button type="button" class="btn btn-outline-info btn-lg">
+    <span *ngIf="!loading">
+        {{btnText}}
+    </span>
+    <span *ngIf="loading">
+        carregando...
+    </span>
+</button>
