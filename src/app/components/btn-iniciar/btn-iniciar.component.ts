@@ -2,7 +2,7 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-type BtnVariants = "btn-primary" | "btn-secondary";
+type BtnVariants = "btn-primary" | "btn-secondary"|"btn-success";
 
 @Component({
   selector: 'app-btn-iniciar',

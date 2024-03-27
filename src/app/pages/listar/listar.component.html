@@ -25,9 +25,8 @@
           <td>{{payment.updated}}</td>
           <td>{{payment.status}}</td>
           <td>
-            <app-btn-iniciar btn-text="editar" [loading]="false" [variant]="'btn-primary'"></app-btn-iniciar>
-            <app-btn-iniciar [btn-text]="'deletar'"  [disabled]="false" [loading]="false"  [variant]="'btn-secondary'" ></app-btn-iniciar>
-         </td>
+            <a [routerLink]="['/payments', payment.id, 'edit']" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>
+          </td>
         </tr>
       </tbody>
     </table>

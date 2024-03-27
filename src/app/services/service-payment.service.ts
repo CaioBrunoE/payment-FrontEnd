@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Payment } from '../model/payment.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,23 +9,23 @@ export class ServicePaymentService {
 private http = inject(HttpClient);
 
 list(){
-  return this.http.get("http://localhost:9002/api/payments")
+  return this.http.get<Payment[]>("http://localhost:9002/api/payments")
 }
 
 getByid(id:number){
-  return this.http.get(`http://localhost:9002/api/payments/${id}`)
+  return this.http.get<Payment>(`http://localhost:9002/api/payments/${id}`)
 }
 
 create(payment: any){
-  return this.http.post(`http://localhost:9002/api/payments/`, payment)
+  return this.http.post<Payment>(`http://localhost:9002/api/payments`, payment)
 }
 
-update(id:number ,payment: any){
-  return this.http.put(`http://localhost:9002/api/payments/${id}`, payment)
+update(id:string ,payment: any){
+  return this.http.put<Payment>(`http://localhost:9002/api/payments/${id}`, payment)
 }
 
-delete(id:number){
-  return this.http.delete(`http://localhost:9002/api/payments/${id}`)
+delete(id:string){
+  return this.http.delete<void>(`http://localhost:9002/api/payments/${id}`)
 }
 
 }

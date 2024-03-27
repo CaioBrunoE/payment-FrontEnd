@@ -1,20 +1,29 @@
 .btn-primary {
-    background-color: #12d5f4; /* Um azul mais suave */
+    background-color: #12d5f4; 
     color: white;
   }
   
   .btn-primary:hover {
-    background-color: #097bf4; /* Um azul mais escuro quando o mouse passa sobre */
-    color: white;
+    background-color: #097bf4;
   }
   
   .btn-secondary {
-    background-color: #dc3545; /* Um vermelho mais moderno */
+    background-color: #dc3545; 
     color: white;
   }
   
   .btn-secondary:hover {
-    background-color: #b02a37; /* Um vermelho mais escuro quando o mouse passa sobre */
+    background-color: #b02a37; 
+    color: white;
+  }
+
+  .btn-success {
+    background-color: #45f686; 
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #08d152; 
     color: white;
   }
   

@@ -1,0 +1,46 @@
+<div class="div-modal " >
+<form class="container" [formGroup]="paymentForm" >
+    <h1 class="text-light">Payment update</h1>
+    <div class="col text-light mb-4">
+        <div class="col">
+            <label for="idProduct" class="form-label text-light" id="idProduct">Product</label>
+            <input type="text" class="form-control" placeholder="Product" aria-label="Product" id="idProduct"
+                formControlName="idProduct">
+        </div>
+        <div class="col mt-4">
+            <label for="idUser" class="form-label text-light" id="idUser">User</label>
+            <input type="text" class="form-control" placeholder="User" aria-label="User" id="idUser"
+                formControlName="idUser">
+        </div>
+        <div class="col mt-4">
+            <label for="value" class="form-label text-light" id="Value">Value</label>
+            <input type="number" class="form-control" placeholder="Value" aria-label="Value"
+                formControlName="value">
+        </div>
+        <div class="col mt-4">
+            <label for="paymentMethod" class="form-label text-light" id="paymentMethod">Payment Method</label>
+            <select class="form-select" aria-label="PaymentMethod" id="paymentMethod"
+                formControlName="paymentMethod">
+                <option value="1" selected>CARD</option>
+                <option value="2">PIX</option>
+                <option value="3">TICKET</option>
+                <option value="4">CASH</option>
+            </select>
+        </div>
+        <div class="col mt-4">
+            <label for="Status" class="form-label text-light" id="status">Status Payment</label>
+            <select class="form-select" aria-label="Status Payment" id="status" formControlName="status">
+                <option value="1" selected>WAITING_PAYMENT</option>
+                <option value="2">PAID</option>
+                <option value="3">CANCELED</option>
+            </select>
+        </div>
+    </div>
+    <div class="div-btn">
+    <app-btn-iniciar [btn-text]="'Update'" (submit)="updateForm()" [loading]="false"
+    [variant]="'btn-success'" ></app-btn-iniciar>
+    <app-btn-iniciar [btn-text]="'Delete'" (submit)="deleteForm()"  [loading]="false"
+    [variant]="'btn-secondary'" ></app-btn-iniciar>
+  </div>
+</form>
+</div>
