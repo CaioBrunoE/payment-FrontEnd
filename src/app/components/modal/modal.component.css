@@ -25,4 +25,8 @@ p{
     display: flex;
     justify-content: space-between;
 }
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
   

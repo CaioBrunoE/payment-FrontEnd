@@ -17,9 +17,9 @@ export const routes: Routes = [
         path:"listar",
         component:ListarComponent
     },
-    {
+   /* {
         path: 'payments/:id/edit',
         component: ModalComponent
-      }
+      }*/
       
 ];

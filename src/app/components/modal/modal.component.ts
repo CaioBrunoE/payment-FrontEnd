@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ServicePaymentService } from '../../services/service-payment.service';
 import { BtnIniciarComponent } from '../btn-iniciar/btn-iniciar.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal',
@@ -16,12 +17,14 @@ import { BtnIniciarComponent } from '../btn-iniciar/btn-iniciar.component';
 })
 export class ModalComponent {
   paymentForm: FormGroup;
+  id: string = '';
 
   constructor(
     private fb: FormBuilder, 
     private paymentService: ServicePaymentService, 
     private router: Router,
-    private acroute: ActivatedRoute
+    //private acrout:ActivatedRoute,
+    private modalService: NgbModal
   ) {
     this.paymentForm = this.fb.group({
       idProduct: ['', [Validators.required]],
@@ -31,26 +34,30 @@ export class ModalComponent {
       status: ['']
     });
   }
+
   updateForm() {
-    const id = this.acroute.snapshot.paramMap.get('id');
     const payment = this.paymentForm.value;
-    console.log(payment, id)
-    if(id){
-      this.paymentService.update(id, payment)
+    //this.acroute.snapshot.paramMap.get('id')
+    if(this.id){
+      this.paymentService.update(this.id, payment)
       .subscribe(() => {
-        
         this.router.navigate(['listar']);
-      })
+        this.modalService.dismissAll(); 
+      });
     }
   }
+  
   deleteForm() {
-    const id = this.acroute.snapshot.paramMap.get('id');
-    console.log(id)
-    if(id){
-      this.paymentService.delete(id)
+    if(this.id !== null){
+      this.paymentService.delete(this.id)
       .subscribe(() => {
         this.router.navigate(['listar']);
-      })
+        this.modalService.dismissAll();
+      });
+      
     }
+  }
+  close(){
+    this.modalService.dismissAll();
   }
 }

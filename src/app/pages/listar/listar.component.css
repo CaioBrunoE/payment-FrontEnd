@@ -2,3 +2,7 @@ div{
     height: 100vh;
     background-color: #151b1f;
 }
+a{
+ cursor: pointer;
+ text-decoration: none;
+}

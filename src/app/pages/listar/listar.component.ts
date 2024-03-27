@@ -5,6 +5,7 @@ import { BtnIniciarComponent } from '../../components/btn-iniciar/btn-iniciar.co
 import { Payment } from '../../model/payment.interface';
 import { RouterLink } from '@angular/router';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-listar',
   standalone:true,
@@ -12,16 +13,18 @@ import { ModalComponent } from '../../components/modal/modal.component';
     NgFor,
     BtnIniciarComponent,
     RouterLink,
-    ModalComponent 
+    ModalComponent
   ],
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
   private servicePayment: ServicePaymentService;
+  private modalService: NgbModal;
 
-  constructor(servicePayment: ServicePaymentService) {
+  constructor(servicePayment: ServicePaymentService,modalService: NgbModal) {
     this.servicePayment = servicePayment;
+    this.modalService=modalService;
   }
 
   payments: Payment[] = [];
@@ -32,4 +35,10 @@ export class ListarComponent implements OnInit {
       this.payments = payment as Payment[];
     });
   }
+
+  open(id: string) {
+    const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.id = id;
+  }
+  
 }
